@@ -100,3 +100,14 @@ limite = int(input("Digite o limite: "))
 
 for i in range(2, limite + 1, 2):
     print(i, end=" ")
+
+# - Exercício de Fixação 03 - Questão 2 -
+
+numero = int(input("Digite um valor positivo: "))
+
+while numero <= 0:
+    print("O valor deve ser positivo.")
+    numero = int(input("Digite um valor positivo: "))
+
+for i in range(1, numero + 1):
+    print(i, end=" ")
