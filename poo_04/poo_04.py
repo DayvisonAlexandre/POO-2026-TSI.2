@@ -93,3 +93,10 @@ if primo:
     print("O número é primo.")
 else:
     print("O número não é primo.")
+
+# - Exercício de Fixação 03 - Questão 1 -
+
+limite = int(input("Digite o limite: "))
+
+for i in range(2, limite + 1, 2):
+    print(i, end=" ")
