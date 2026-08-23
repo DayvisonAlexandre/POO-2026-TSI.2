@@ -69,3 +69,32 @@ while l != -1:
     l = lista[l].prox
 
 print()
+
+# - Exercício de Fixação 02 -
+
+quantidade = int(input("Quantas equações serão calculadas? "))
+
+lista_a = []
+lista_b = []
+lista_x = []
+lista_y = []
+
+# Entrada dos valores
+for i in range(quantidade):
+    print(f"\nEquação {i + 1}")
+
+    a = float(input("Digite o valor de a: "))
+    b = float(input("Digite o valor de b: "))
+    x = float(input("Digite o valor de x: "))
+
+    lista_a.append(a)
+    lista_b.append(b)
+    lista_x.append(x)
+
+# Cálculo e exibição
+for i in range(quantidade):
+    y = lista_a[i] * lista_x[i] + lista_b[i]
+    lista_y.append(y)
+
+    print(f"\ny = {lista_a[i]}*{lista_x[i]} + {lista_b[i]}")
+    print(f"y = {y}")
