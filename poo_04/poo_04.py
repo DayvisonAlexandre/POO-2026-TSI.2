@@ -70,3 +70,26 @@ while temperatura >= 0:
         print("Calor da muléstia!")
 
     temperatura = float(input("\nDigite outra temperatura: "))
+
+# - Exercício de Fixação 02 - Questão 2 -
+
+numero = int(input("Digite um número entre 1 e 10000: "))
+
+while numero < 1 or numero > 10000:
+    print("Número inválido!")
+    numero = int(input("Digite um número entre 1 e 10000: "))
+
+primo = True
+
+if numero == 1:
+    primo = False
+else:
+    for i in range(2, numero):
+        if numero % i == 0:
+            primo = False
+            break
+
+if primo:
+    print("O número é primo.")
+else:
+    print("O número não é primo.")
