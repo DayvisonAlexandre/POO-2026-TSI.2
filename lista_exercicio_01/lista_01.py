@@ -14,3 +14,13 @@ print(nota3)
 print(nota4)
 
 print(f"Média aritmética: {media:.2f}")
+
+# - Questão - 02 -
+
+anos = int(input("Digite a quantidade de anos: "))
+meses = int(input("Digite a quantidade de meses: "))
+dias = int(input("Digite a quantidade de dias: "))
+
+total_dias = (anos * 365) + (meses * 30) + dias
+
+print(f"Idade expressa em dias: {total_dias} dias")
