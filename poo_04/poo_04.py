@@ -129,3 +129,21 @@ while v_ini > v_fim:
 
 for i in range(v_ini, v_fim + 1):
     print(i, end=" ")
+
+# - Exercício de Fixação 03 - Questão 4 -
+
+v_ini = int(input("Digite o início do intervalo: "))
+v_fim = int(input("Digite o fim do intervalo: "))
+
+while v_ini <= 0 or v_fim <= 0:
+    print("Os valores devem ser positivos.")
+    v_ini = int(input("Digite o início do intervalo: "))
+    v_fim = int(input("Digite o fim do intervalo: "))
+
+while v_ini >= v_fim:
+    print("O início deve ser menor que o fim.")
+    v_ini = int(input("Digite o início do intervalo: "))
+    v_fim = int(input("Digite o fim do intervalo: "))
+
+for i in range(v_ini + 1, v_fim):
+    print(i, end=" ")
