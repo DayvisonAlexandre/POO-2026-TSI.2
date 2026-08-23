@@ -47,3 +47,26 @@ print("\n=== RESULTADO DA PESQUISA ===")
 print("INSATISFEITO:", percentual_insatisfeito, "%")
 print("SATISFEITO:", percentual_satisfeito, "%")
 print("NÃO QUERO RESPONDER:", percentual_nao_responder, "%")
+
+# - Exercício de Fixação 02 - Questão 1 -
+
+temperatura = float(input("Digite a temperatura atual: "))
+
+while temperatura >= 0:
+
+    if temperatura < 15:
+        print("Aqui não é o RN")
+
+    elif temperatura <= 25:
+        print("Pense num frio")
+
+    elif temperatura <= 30:
+        print("Temperatura normal e super agradável")
+
+    elif temperatura <= 35:
+        print("Tá quente pra danado")
+
+    else:
+        print("Calor da muléstia!")
+
+    temperatura = float(input("\nDigite outra temperatura: "))
