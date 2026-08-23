@@ -64,3 +64,32 @@ alunos = {
 resultado = alunos_aprovados(alunos)
 
 print(resultado)
+
+# - Exercício de Fixação 03 - Conjuntos -
+
+def elementos_comuns(conjunto1, conjunto2):
+    return conjunto1 & conjunto2
+
+
+conjunto1 = {1, 2, 3, 4}
+conjunto2 = {3, 4, 5, 6}
+
+resultado = elementos_comuns(conjunto1, conjunto2)
+
+print(resultado)
+
+def palindromos(palavras):
+    resultado = set()
+
+    for palavra in palavras:
+        if palavra == palavra[::-1]:
+            resultado.add(palavra)
+
+    return resultado
+
+
+palavras = {"arara", "casa", "ovo", "radar"}
+
+resultado = palindromos(palavras)
+
+print(resultado)
