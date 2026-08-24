@@ -104,3 +104,12 @@ impostos = custo_fabrica * 0.45
 custo_final = custo_fabrica + distribuidor + impostos
 
 print(f"Custo final ao consumidor: R$ {custo_final:.2f}")
+
+# - Questão - 09 -
+
+numero = int(input("Digite um número entre 1 e 10: "))
+
+if 1 <= numero <= 10:
+    print("O número digitado está DENTRO da faixa solicitada.")
+else:
+    print("O número digitado está FORA da faixa solicitada.")
