@@ -244,3 +244,17 @@ for i in range(5):
         soma += numero
 
 print(f"Somatório dos valores pares: {soma}")
+
+# - Questão - 21 -
+
+quantidade = int(input("Digite a quantidade de valores: "))
+
+pares = 0
+
+for i in range(quantidade):
+    numero = int(input(f"Digite o {i + 1}º número: "))
+
+    if numero % 2 == 0:
+        pares += 1
+
+print(f"Quantidade de números pares: {pares}")
