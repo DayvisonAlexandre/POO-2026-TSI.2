@@ -396,3 +396,30 @@ media = sum(notas) / len(notas)
 print(f"Maior nota: {maior:.2f}")
 print(f"Menor nota: {menor:.2f}")
 print(f"Média das notas: {media:.2f}")
+
+# - Questão - 30 -
+
+vet1 = []
+vet2 = []
+
+for i in range(5):
+    numero = int(input(f"Digite o {i + 1}º valor: "))
+    vet1.append(numero)
+
+for i in range(5):
+    numero = int(input(f"Digite o {i + 6}º valor: "))
+    vet2.append(numero)
+
+somaPAR = 0
+somaIMPAR = 0
+
+for numero in vet1 + vet2:
+    if numero % 2 == 0:
+        somaPAR += numero
+    else:
+        somaIMPAR += numero
+
+print(f"vet1: {vet1}")
+print(f"vet2: {vet2}")
+print(f"somaPAR: {somaPAR}")
+print(f"somaIMPAR: {somaIMPAR}")
