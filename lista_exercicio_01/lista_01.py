@@ -198,3 +198,13 @@ for numero in range(inicio, fim + 1):
     soma += numero
 
 print(f"Somatório: {soma}")
+
+# - Questão - 17 -
+
+soma = 0
+
+for i in range(10):
+    numero = float(input(f"Digite o {i + 1}º número: "))
+    soma += numero
+
+print(f"Somatório: {soma}")
