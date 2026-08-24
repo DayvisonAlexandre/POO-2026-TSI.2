@@ -423,3 +423,34 @@ print(f"vet1: {vet1}")
 print(f"vet2: {vet2}")
 print(f"somaPAR: {somaPAR}")
 print(f"somaIMPAR: {somaIMPAR}")
+
+# - Questão - 31 -
+
+numero_atleta = 1
+
+while True:
+    print(f"\nAtleta {numero_atleta}")
+
+    nome = input("Nome do atleta: ")
+
+    if nome == "":
+        break
+
+    saltos = []
+
+    for i in range(5):
+        salto = float(input(f"{i + 1}º Salto: "))
+        saltos.append(salto)
+
+    media = sum(saltos) / 5
+
+    print("\nResultado final:")
+    print(f"Atleta: {nome}")
+    print(
+        "Saltos: "
+        + " - ".join(f"{salto:.1f}" for salto in saltos)
+    )
+    print(f"Média dos saltos: {media:.2f} m")
+    print("-------------------------------------------")
+
+    numero_atleta += 1
