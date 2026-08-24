@@ -349,3 +349,18 @@ while True:
 
 print(f"Quantidade de números pares: {pares}")
 print(f"Quantidade de números ímpares: {impares}")
+
+# - Questão - 27 -
+
+valor = int(input("Digite um valor: "))
+
+for numero in range(1, valor + 1):
+
+    if numero % 3 == 0 and numero % 7 == 0:
+        print("POW")
+    elif numero % 3 == 0:
+        print("PI")
+    elif numero % 7 == 0:
+        print("PA")
+    else:
+        print(numero)
