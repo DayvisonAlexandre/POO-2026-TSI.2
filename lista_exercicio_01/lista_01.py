@@ -24,3 +24,12 @@ dias = int(input("Digite a quantidade de dias: "))
 total_dias = (anos * 365) + (meses * 30) + dias
 
 print(f"Idade expressa em dias: {total_dias} dias")
+
+# - Questão - 03 -
+
+hora = int(input("Digite a hora: "))
+minuto = int(input("Digite os minutos: "))
+
+total_minutos = (hora * 60) + minuto
+
+print(f"Minutos desde o início do dia: {total_minutos}")
