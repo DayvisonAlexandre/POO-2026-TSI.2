@@ -180,3 +180,21 @@ for numero in range(1, 101):
 
 for numero in range(100, 0, -1):
     print(numero)
+
+# - Questão - 16 -
+
+inicio = int(input("Digite o primeiro valor: "))
+fim = int(input("Digite o segundo valor: "))
+
+if inicio > fim:
+    inicio, fim = fim, inicio
+
+soma = 0
+
+print("Números do intervalo:")
+
+for numero in range(inicio, fim + 1):
+    print(numero)
+    soma += numero
+
+print(f"Somatório: {soma}")
