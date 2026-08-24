@@ -364,3 +364,19 @@ for numero in range(1, valor + 1):
         print("PA")
     else:
         print(numero)
+
+# - Questão - 28 -
+
+valores = []
+
+for i in range(10):
+    numero = int(input(f"Digite o {i + 1}º valor: "))
+    valores.append(numero)
+
+quantidade_pares = 0
+
+for numero in valores:
+    if numero != 0 and numero % 2 == 0:
+        quantidade_pares += 1
+
+print(f"Quantidade de valores pares: {quantidade_pares}")
