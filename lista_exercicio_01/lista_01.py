@@ -175,3 +175,8 @@ else:
 
 for numero in range(1, 101):
     print(numero)
+
+# - Questão - 15 -
+
+for numero in range(100, 0, -1):
+    print(numero)
