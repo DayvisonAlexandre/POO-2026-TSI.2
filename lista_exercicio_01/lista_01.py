@@ -304,3 +304,19 @@ elif soma_impares == soma_pares:
     print("Os somatórios são iguais.")
 else:
     print("O somatório dos números pares é maior.")
+
+# - Questão - 24 -
+
+quantidade = int(input("Digite o total de números a serem somados: "))
+
+soma = 0
+valores = []
+
+for i in range(quantidade):
+    numero = int(input(f"Digite o {i + 1}º número: "))
+    valores.append(numero)
+    soma += numero
+
+expressao = "+".join(map(str, valores))
+
+print(f"Saída no terminal: {expressao}={soma}")
