@@ -49,3 +49,19 @@ print("\n--- Dados do Funcionário ---")
 print(f"Nome: {nome}")
 print(f"Salário bruto: R$ {salario_bruto:.2f}")
 print(f"Salário final: R$ {salario_final:.2f}")
+
+# - Questão - 05 -
+
+import math
+
+largura = float(input("Digite a largura da sala em metros: "))
+profundidade = float(input("Digite a profundidade da sala em metros: "))
+
+area = largura * profundidade
+potencia_necessaria = area * 18
+
+quantidade_lampadas = math.ceil(potencia_necessaria / 60)
+
+print(f"Área da sala: {area:.2f} m²")
+print(f"Potência necessária: {potencia_necessaria:.2f} W")
+print(f"Lâmpadas necessárias: {quantidade_lampadas}")
