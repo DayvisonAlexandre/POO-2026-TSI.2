@@ -281,3 +281,26 @@ elif soma_impares == soma_pares:
     print("Os somatórios são iguais.")
 else:
     print("O somatório dos números pares é maior.")
+
+# - Questão - 23 -
+
+soma_pares = 0
+soma_impares = 0
+
+for i in range(10):
+    numero = int(input(f"Digite o {i + 1}º número: "))
+
+    if numero % 2 == 0:
+        soma_pares += numero
+    else:
+        soma_impares += numero
+
+print(f"Soma dos números pares: {soma_pares}")
+print(f"Soma dos números ímpares: {soma_impares}")
+
+if soma_impares > soma_pares:
+    print("O somatório dos números ímpares é maior.")
+elif soma_impares == soma_pares:
+    print("Os somatórios são iguais.")
+else:
+    print("O somatório dos números pares é maior.")
