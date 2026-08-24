@@ -33,3 +33,19 @@ minuto = int(input("Digite os minutos: "))
 total_minutos = (hora * 60) + minuto
 
 print(f"Minutos desde o início do dia: {total_minutos}")
+
+# - Questão - 04 -
+
+nome = input("Digite o nome completo do funcionário: ")
+horas = float(input("Digite o número de horas trabalhadas no mês: "))
+valor_hora = float(input("Digite o valor recebido por hora: R$ "))
+filhos = int(input("Digite o número de filhos: "))
+
+salario_bruto = horas * valor_hora
+acrescimo = salario_bruto * (0.03 * filhos)
+salario_final = salario_bruto + acrescimo
+
+print("\n--- Dados do Funcionário ---")
+print(f"Nome: {nome}")
+print(f"Salário bruto: R$ {salario_bruto:.2f}")
+print(f"Salário final: R$ {salario_final:.2f}")
