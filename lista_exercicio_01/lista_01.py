@@ -258,3 +258,26 @@ for i in range(quantidade):
         pares += 1
 
 print(f"Quantidade de números pares: {pares}")
+
+# - Questão - 22 -
+
+soma_impares = 0
+soma_pares = 0
+
+for i in range(10):
+    numero = int(input(f"Digite o {i + 1}º número: "))
+
+    if i % 2 == 0:
+        soma_impares += numero
+    else:
+        soma_pares += numero
+
+print(f"Soma das posições ímpares: {soma_impares}")
+print(f"Soma das posições pares: {soma_pares}")
+
+if soma_impares > soma_pares:
+    print("O somatório dos números ímpares é maior.")
+elif soma_impares == soma_pares:
+    print("Os somatórios são iguais.")
+else:
+    print("O somatório dos números pares é maior.")
