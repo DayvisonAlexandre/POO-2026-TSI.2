@@ -208,3 +208,15 @@ for i in range(10):
     soma += numero
 
 print(f"Somatório: {soma}")
+
+# - Questão - 18 -
+
+soma = 0
+
+for i in range(5):
+    numero = float(input(f"Digite o {i + 1}º valor: "))
+
+    if numero < 10:
+        soma += numero
+
+print(f"Somatório dos valores menores que 10: {soma}")
