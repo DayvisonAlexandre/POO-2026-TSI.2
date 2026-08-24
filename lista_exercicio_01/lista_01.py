@@ -65,3 +65,23 @@ quantidade_lampadas = math.ceil(potencia_necessaria / 60)
 print(f"Área da sala: {area:.2f} m²")
 print(f"Potência necessária: {potencia_necessaria:.2f} W")
 print(f"Lâmpadas necessárias: {quantidade_lampadas}")
+
+# - Questão - 06 -
+
+brancos = int(input("Digite o número de votos brancos: "))
+nulos = int(input("Digite o número de votos nulos: "))
+validos = int(input("Digite o número de votos válidos: "))
+
+total = brancos + nulos + validos
+
+if total == 0:
+    print("Não é possível calcular os percentuais.")
+else:
+    percentual_brancos = (brancos / total) * 100
+    percentual_nulos = (nulos / total) * 100
+    percentual_validos = (validos / total) * 100
+
+    print(f"Total de eleitores: {total}")
+    print(f"Votos brancos: {percentual_brancos:.2f}%")
+    print(f"Votos nulos: {percentual_nulos:.2f}%")
+    print(f"Votos válidos: {percentual_validos:.2f}%")
