@@ -320,3 +320,13 @@ for i in range(quantidade):
 expressao = "+".join(map(str, valores))
 
 print(f"Saída no terminal: {expressao}={soma}")
+
+# - Questão - 25 -
+
+valores = []
+
+for numero in range(1000, 3001):
+    if numero % 7 == 0 and numero % 5 != 0:
+        valores.append(str(numero))
+
+print(";".join(valores))
