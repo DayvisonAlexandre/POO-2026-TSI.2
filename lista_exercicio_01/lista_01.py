@@ -380,3 +380,19 @@ for numero in valores:
         quantidade_pares += 1
 
 print(f"Quantidade de valores pares: {quantidade_pares}")
+
+# - Questão - 29 -
+
+notas = []
+
+for i in range(10):
+    nota = float(input(f"Digite a nota do aluno {i + 1}: "))
+    notas.append(nota)
+
+maior = max(notas)
+menor = min(notas)
+media = sum(notas) / len(notas)
+
+print(f"Maior nota: {maior:.2f}")
+print(f"Menor nota: {menor:.2f}")
+print(f"Média das notas: {media:.2f}")
