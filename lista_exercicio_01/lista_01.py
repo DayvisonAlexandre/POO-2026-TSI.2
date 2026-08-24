@@ -170,3 +170,8 @@ elif opcao == "D":
     print("Ordem decrescente:", valores)
 else:
     print("Opção inválida.")
+
+# - Questão - 14 -
+
+for numero in range(1, 101):
+    print(numero)
