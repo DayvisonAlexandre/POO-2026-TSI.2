@@ -149,3 +149,24 @@ valores.sort()
 
 print("Valores em ordem crescente:")
 print(valores[0], valores[1], valores[2])
+
+# - Questão - 13 -
+
+valor1 = int(input("Digite o primeiro valor: "))
+valor2 = int(input("Digite o segundo valor: "))
+valor3 = int(input("Digite o terceiro valor: "))
+
+valores = [valor1, valor2, valor3]
+
+opcao = input(
+    "Digite C para ordem crescente ou D para ordem decrescente: "
+).upper()
+
+if opcao == "C":
+    valores.sort()
+    print("Ordem crescente:", valores)
+elif opcao == "D":
+    valores.sort(reverse=True)
+    print("Ordem decrescente:", valores)
+else:
+    print("Opção inválida.")
