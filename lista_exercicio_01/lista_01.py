@@ -85,3 +85,11 @@ else:
     print(f"Votos brancos: {percentual_brancos:.2f}%")
     print(f"Votos nulos: {percentual_nulos:.2f}%")
     print(f"Votos válidos: {percentual_validos:.2f}%")
+
+# - Questão - 07 -
+
+fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+
+celsius = (fahrenheit - 32) * 5 / 9
+
+print(f"Temperatura em Celsius: {celsius:.2f} °C")
