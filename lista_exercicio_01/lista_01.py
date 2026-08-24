@@ -93,3 +93,14 @@ fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
 celsius = (fahrenheit - 32) * 5 / 9
 
 print(f"Temperatura em Celsius: {celsius:.2f} °C")
+
+# - Questão - 08 -
+
+custo_fabrica = float(input("Digite o custo de fábrica do carro: R$ "))
+
+distribuidor = custo_fabrica * 0.28
+impostos = custo_fabrica * 0.45
+
+custo_final = custo_fabrica + distribuidor + impostos
+
+print(f"Custo final ao consumidor: R$ {custo_final:.2f}")
