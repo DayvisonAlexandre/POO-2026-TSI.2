@@ -232,3 +232,15 @@ for i in range(5):
         soma += numero
 
 print(f"Somatório: {soma}")
+
+# - Questão - 20 -
+
+soma = 0
+
+for i in range(5):
+    numero = int(input(f"Digite o {i + 1}º valor: "))
+
+    if numero % 2 == 0:
+        soma += numero
+
+print(f"Somatório dos valores pares: {soma}")
