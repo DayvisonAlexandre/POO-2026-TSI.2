@@ -454,3 +454,45 @@ while True:
     print("-------------------------------------------")
 
     numero_atleta += 1
+
+# - Questão - 32 -
+
+print("Comparativo de Consumo de Combustível")
+
+quantidade = int(input("Digite a quantidade de veículos: "))
+
+modelos = []
+consumos = []
+
+for i in range(quantidade):
+    print(f"\nVeículo {i + 1}")
+
+    modelo = input("Nome: ")
+    consumo = float(input("Km por litro: "))
+
+    modelos.append(modelo)
+    consumos.append(consumo)
+
+print("\nRelatório Final")
+
+menor_consumo = consumos[0]
+indice_economico = 0
+
+for i in range(quantidade):
+    litros = 1000 / consumos[i]
+    custo = litros * 7.50
+
+    print(
+        f"{i + 1} - {modelos[i]} - "
+        f"{consumos[i]:.1f} - "
+        f"{litros:.1f} litros - "
+        f"R$ {custo:.2f}"
+    )
+
+    if consumos[i] > menor_consumo:
+        menor_consumo = consumos[i]
+        indice_economico = i
+
+print(
+    f"O menor consumo é do {modelos[indice_economico]}."
+)
