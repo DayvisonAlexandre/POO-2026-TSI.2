@@ -74,3 +74,42 @@ class Carro:
             print("Estado: Ligado")
         else:
             print("Estado: Desligado")
+
+# ============================================================
+# - programa principal - testando a classe carro -
+# ============================================================
+
+print("=" * 50)
+print("TESTE DA CLASSE CARRO")
+print("=" * 50)
+
+# Criando um objeto da classe Carro
+carro1 = Carro(
+    marca="Toyota",
+    modelo="Corolla",
+    ano=2024,
+    cor="Prata"
+)
+
+# Mostrando as informações iniciais
+carro1.mostrar_informacoes()
+
+# Testando as ações do carro
+print("\n--- AÇÕES DO CARRO ---")
+
+carro1.ligar()
+carro1.acelerar(30)
+carro1.acelerar(20)
+carro1.frear(15)
+
+# Mostrando novamente as informações
+carro1.mostrar_informacoes()
+
+# Freando completamente
+carro1.frear(35)
+
+# Desligando o carro
+carro1.desligar()
+
+# Mostrando o estado final
+carro1.mostrar_informacoes()
