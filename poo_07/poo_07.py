@@ -177,3 +177,34 @@ class Cachorro:
         print(f"Idade: {self.idade} anos")
         print(f"Cor: {self.cor}")
         print(f"Energia: {self.energia}%")
+
+# ============================================================
+# - programa principal - testando a classe cachorro -
+# ============================================================
+
+print("\n" + "=" * 50)
+print("TESTE DA CLASSE CACHORRO")
+print("=" * 50)
+
+# Criando um objeto da classe Cachorro
+cachorro1 = Cachorro(
+    nome="Rex",
+    raca="Pastor Alemão",
+    idade=3,
+    cor="Marrom"
+)
+
+# Mostrando as informações iniciais
+cachorro1.mostrar_informacoes()
+
+# Testando as ações do cachorro
+print("\n--- AÇÕES DO CACHORRO ---")
+
+cachorro1.latir()
+cachorro1.brincar()
+cachorro1.brincar()
+cachorro1.comer()
+cachorro1.dormir()
+
+# Mostrando o estado final
+cachorro1.mostrar_informacoes()
