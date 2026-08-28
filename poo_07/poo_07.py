@@ -113,3 +113,67 @@ carro1.desligar()
 
 # Mostrando o estado final
 carro1.mostrar_informacoes()
+
+# ============================================================
+# - exercicío 02 - classe cachorro -
+# ============================================================
+
+class Cachorro:
+    # Construtor da classe
+    def __init__(self, nome, raca, idade, cor):
+        self.nome = nome
+        self.raca = raca
+        self.idade = idade
+        self.cor = cor
+        self.energia = 100
+
+    # Método para o cachorro latir
+    def latir(self):
+        print(f"{self.nome} está latindo: Au au!")
+
+    # Método para o cachorro comer
+    def comer(self):
+        if self.energia < 100:
+            self.energia += 20
+
+            # Impede que a energia ultrapasse 100
+            if self.energia > 100:
+                self.energia = 100
+
+            print(
+                f"{self.nome} comeu e recuperou energia. "
+                f"Energia atual: {self.energia}%."
+            )
+        else:
+            print(f"{self.nome} já está com a energia completa.")
+
+    # Método para o cachorro brincar
+    def brincar(self):
+        if self.energia >= 20:
+            self.energia -= 20
+            print(
+                f"{self.nome} está brincando. "
+                f"Energia atual: {self.energia}%."
+            )
+        else:
+            print(
+                f"{self.nome} está cansado e não tem energia suficiente "
+                "para brincar."
+            )
+
+    # Método para o cachorro dormir
+    def dormir(self):
+        self.energia = 100
+        print(
+            f"{self.nome} dormiu e recuperou toda a energia. "
+            f"Energia atual: {self.energia}%."
+        )
+
+    # Método para mostrar as informações do cachorro
+    def mostrar_informacoes(self):
+        print("\n--- INFORMAÇÕES DO CACHORRO ---")
+        print(f"Nome: {self.nome}")
+        print(f"Raça: {self.raca}")
+        print(f"Idade: {self.idade} anos")
+        print(f"Cor: {self.cor}")
+        print(f"Energia: {self.energia}%")
