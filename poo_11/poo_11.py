@@ -48,3 +48,42 @@ class Gato(Animal):
 
     def estaNaArvore(self):
         return self._naArvore
+
+
+from gato import Gato
+from cachorro import Cachorro
+
+
+# Testando o Gato
+gato = Gato("Mimi", 4.5)
+
+print("===== GATO =====")
+gato.miar()
+
+print("Está na árvore?", gato.estaNaArvore())
+
+gato.subirNaArvore()
+print("Está na árvore após subir?", gato.estaNaArvore())
+
+gato.descerDaArvore()
+print("Está na árvore após descer?", gato.estaNaArvore())
+
+
+# Testando o Cachorro
+cachorro = Cachorro("Rex", 12.5)
+
+print("\n===== CACHORRO =====")
+cachorro.latir()
+
+print("Está cansado?", cachorro.estaCansado())
+
+for i in range(6):
+    cachorro.saltar()
+
+print("Depois de 6 saltos:")
+print("Está cansado?", cachorro.estaCansado())
+
+cachorro.descansar()
+
+print("Depois de descansar:")
+print("Está cansado?", cachorro.estaCansado())
