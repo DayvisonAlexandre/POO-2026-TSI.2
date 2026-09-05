@@ -115,3 +115,12 @@ print(
     f"Total de produtos cadastrados: "
     f"{Produto.total_cadastrados}"
 )
+
+# - Questão 02 -
+
+
+print("\n(2) MÉTODO Produto.de_csv()")
+
+produto3 = Produto.de_csv(
+    "Teclado;120.0;10"
+)
