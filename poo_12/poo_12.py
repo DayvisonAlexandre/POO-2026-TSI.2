@@ -216,3 +216,274 @@ if __name__ == "__main__":
 #             ├──────────────────┤
 #             │ + __add__()      │
 #             └──────────────────┘
+
+# - Questão 02 -
+
+# ============================================================
+# CLASSE BASE ANIMAL
+# ============================================================
+
+class Animal:
+
+    def __init__(self, nome, idade, custo_alimentacao):
+        if idade < 0:
+            raise ValueError("A idade não pode ser negativa.")
+
+        if custo_alimentacao < 0:
+            raise ValueError("O custo de alimentação não pode ser negativo.")
+
+        self.nome = nome
+        self.idade = idade
+        self.custo_alimentacao = custo_alimentacao
+
+    def movimentar(self):
+        print(f"{self.nome} está se movimentando.")
+
+    def emitir_som(self):
+        print(f"{self.nome} emitiu um som.")
+
+    def alimentar(self):
+        print(
+            f"{self.nome} possui custo de alimentação de "
+            f"R$ {self.custo_alimentacao:.2f} por dia."
+        )
+
+    def apresentar(self):
+        print(f"Nome: {self.nome}")
+        print(f"Idade: {self.idade} anos")
+        print(
+            f"Custo de alimentação: "
+            f"R$ {self.custo_alimentacao:.2f} por dia"
+        )
+
+
+# ============================================================
+# CLASSE LEÃO
+# ============================================================
+
+class Leao(Animal):
+
+    def movimentar(self):
+        print(f"{self.nome} está caminhando e correndo.")
+
+    def emitir_som(self):
+        print(f"{self.nome} está rugindo.")
+
+    def alimentar(self):
+        print(
+            f"{self.nome} se alimenta principalmente de carne. "
+            f"Custo diário: R$ {self.custo_alimentacao:.2f}"
+        )
+
+
+# ============================================================
+# CLASSE ELEFANTE
+# ============================================================
+
+class Elefante(Animal):
+
+    def movimentar(self):
+        print(f"{self.nome} está caminhando lentamente.")
+
+    def emitir_som(self):
+        print(f"{self.nome} está emitindo um som característico.")
+
+    def alimentar(self):
+        print(
+            f"{self.nome} se alimenta de vegetais, frutas e folhas. "
+            f"Custo diário: R$ {self.custo_alimentacao:.2f}"
+        )
+
+
+# ============================================================
+# CLASSE MACACO
+# ============================================================
+
+class Macaco(Animal):
+
+    def movimentar(self):
+        print(f"{self.nome} está pulando e subindo nas árvores.")
+
+    def emitir_som(self):
+        print(f"{self.nome} está emitindo sons característicos de macaco.")
+
+    def alimentar(self):
+        print(
+            f"{self.nome} se alimenta de frutas, sementes e vegetais. "
+            f"Custo diário: R$ {self.custo_alimentacao:.2f}"
+        )
+
+
+# ============================================================
+# CLASSE PINGUIM
+# ============================================================
+
+class Pinguim(Animal):
+
+    def movimentar(self):
+        print(f"{self.nome} está caminhando e nadando.")
+
+    def emitir_som(self):
+        print(f"{self.nome} está emitindo sons característicos.")
+
+    def alimentar(self):
+        print(
+            f"{self.nome} se alimenta principalmente de peixes. "
+            f"Custo diário: R$ {self.custo_alimentacao:.2f}"
+        )
+
+
+# ============================================================
+# CLASSE ZOOLÓGICO
+# ============================================================
+
+class Zoologico:
+
+    def __init__(self, nome):
+        self.nome = nome
+        self.animais = []
+
+    def adicionar_animal(self, animal):
+        if not isinstance(animal, Animal):
+            raise TypeError(
+                "Somente objetos da classe Animal podem "
+                "ser adicionados ao zoológico."
+            )
+
+        self.animais.append(animal)
+
+    def listar_animais(self):
+        print(f"\nZoológico: {self.nome}")
+        print(f"Quantidade de animais: {len(self.animais)}")
+
+        for animal in self.animais:
+            print("-" * 50)
+            animal.apresentar()
+
+    def movimentar_animais(self):
+        print("\n--- MOVIMENTAÇÃO DOS ANIMAIS ---")
+
+        for animal in self.animais:
+            animal.movimentar()
+
+    def sons_dos_animais(self):
+        print("\n--- SONS DOS ANIMAIS ---")
+
+        for animal in self.animais:
+            animal.emitir_som()
+
+    def alimentar_animais(self):
+        print("\n--- ALIMENTAÇÃO DOS ANIMAIS ---")
+
+        for animal in self.animais:
+            animal.alimentar()
+
+    def custo_total_diario(self):
+        total = 0
+
+        for animal in self.animais:
+            total += animal.custo_alimentacao
+
+        return total
+
+
+#                       ┌───────────────────────┐
+#                       │        Animal         │
+#                       ├───────────────────────┤
+#                       │ - nome                │
+#                       │ - idade               │
+#                       │ - custo_alimentacao   │
+#                       ├───────────────────────┤
+#                       │ + movimentar()        │
+#                       │ + emitir_som()        │
+#                       │ + alimentar()         │
+#                       │ + apresentar()        │
+#                       └───────────┬───────────┘
+#                                   │
+#              ┌────────────────────┼────────────────────┐
+#              │                    │                    │
+#              ▼                    ▼                    ▼
+#       ┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+#       │    Leao     │      │  Elefante   │      │   Macaco    │
+#       ├─────────────┤      ├─────────────┤      ├─────────────┤
+#       │ +movimentar │      │ +movimentar │      │ +movimentar │
+#       │ +emitir_som │      │ +emitir_som │      │ +emitir_som │
+#       │ +alimentar  │      │ +alimentar  │      │ +alimentar  │
+#       └─────────────┘      └─────────────┘      └─────────────┘
+#                                   │
+#                                   │
+#                                   ▼
+#                            ┌─────────────┐
+#                            │  Pinguim    │
+#                            ├─────────────┤
+#                            │+movimentar  │
+#                            │+emitir_som  │
+#                            │+alimentar   │
+#                            └─────────────┘
+#
+#
+#                       ┌───────────────────────┐
+#                       │      Zoologico        │
+#                       ├───────────────────────┤
+#                       │ - nome                │
+#                       │ - animais             │
+#                       ├───────────────────────┤
+#                       │ + adicionar_animal()  │
+#                       │ + listar_animais()    │
+#                       │ + movimentar_animais()│
+#                       │ + sons_dos_animais()  │
+#                       │ + alimentar_animais() │
+#                       │ + custo_total_diario()│
+#                       └───────────┬───────────┘
+#                                   │
+#                                   │ possui vários
+#                                   ▼
+#                                Animal
+
+
+# ============================================================
+# PROGRAMA PRINCIPAL
+# ============================================================
+
+def main():
+
+    print("=" * 60)
+    print("EXERCÍCIO 2 - SISTEMA DE ZOOLÓGICO")
+    print("=" * 60)
+
+    # Criando o zoológico
+    zoologico = Zoologico("Zoológico Municipal")
+
+    # Criando os animais
+    leao = Leao("Simba", 8, 150.00)
+    elefante = Elefante("Dumbo", 15, 200.00)
+    macaco = Macaco("Chico", 5, 80.00)
+    pinguim = Pinguim("Pingo", 4, 60.00)
+
+    # Adicionando os animais ao zoológico
+    zoologico.adicionar_animal(leao)
+    zoologico.adicionar_animal(elefante)
+    zoologico.adicionar_animal(macaco)
+    zoologico.adicionar_animal(pinguim)
+
+    # Listagem
+    zoologico.listar_animais()
+
+    # Polimorfismo: cada animal se movimenta de forma diferente
+    zoologico.movimentar_animais()
+
+    # Polimorfismo: cada animal emite um som diferente
+    zoologico.sons_dos_animais()
+
+    # Polimorfismo: alimentação diferente
+    zoologico.alimentar_animais()
+
+    # Custo total
+    total = zoologico.custo_total_diario()
+
+    print("\n--- CUSTO TOTAL ---")
+    print(f"Custo total de alimentação por dia: R$ {total:.2f}")
+
+
+if __name__ == "__main__":
+    main()
