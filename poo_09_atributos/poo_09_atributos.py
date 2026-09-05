@@ -84,3 +84,34 @@ class Temperatura:
 
     def __str__(self):
         return f"{self.celsius:.2f} °C"
+
+
+# ============================================================
+# EXECUÇÃO DOS EXERCÍCIOS
+# ============================================================
+
+print("=" * 60)
+print("PRÁTICA - EXERCÍCIOS EM SALA")
+print("=" * 60)
+
+
+# - Questão 01 -
+
+
+print("\n(1) CONTADOR DE PRODUTOS")
+
+print(
+    f"Total antes dos cadastros: "
+    f"{Produto.total_cadastrados}"
+)
+
+produto1 = Produto("Mouse", 50.0, 10)
+produto2 = Produto("Teclado", 120.0, 5)
+
+print(produto1)
+print(produto2)
+
+print(
+    f"Total de produtos cadastrados: "
+    f"{Produto.total_cadastrados}"
+)
