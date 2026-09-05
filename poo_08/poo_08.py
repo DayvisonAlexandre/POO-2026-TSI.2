@@ -111,3 +111,45 @@ print(
     f"Ponto (250, 100) está dentro/no limite? "
     f"{point_in_circle(circulo, ponto_fora)}"
 )
+
+
+# - Questão 04 -
+
+
+def rect_in_circle(circle, rectangle):
+    """
+    Retorna True se todos os quatro cantos do retângulo
+    estiverem dentro ou no limite do círculo.
+    """
+
+    for corner in rectangle.corners():
+        if not point_in_circle(circle, corner):
+            return False
+
+    return True
+
+
+print("\n" + "=" * 60)
+print("QUESTÃO 4 - RECT_IN_CIRCLE")
+print("=" * 60)
+
+retangulo_dentro = Rectangle(120, 70, 60, 40)
+retangulo_fora = Rectangle(200, 80, 80, 40)
+
+print("Retângulo 1:")
+for i, corner in enumerate(retangulo_dentro.corners(), start=1):
+    print(f"  Canto {i}: ({corner.x}, {corner.y})")
+
+print(
+    f"Retângulo 1 está totalmente dentro/no limite? "
+    f"{rect_in_circle(circulo, retangulo_dentro)}"
+)
+
+print("\nRetângulo 2:")
+for i, corner in enumerate(retangulo_fora.corners(), start=1):
+    print(f"  Canto {i}: ({corner.x}, {corner.y})")
+
+print(
+    f"Retângulo 2 está totalmente dentro/no limite? "
+    f"{rect_in_circle(circulo, retangulo_fora)}"
+)
