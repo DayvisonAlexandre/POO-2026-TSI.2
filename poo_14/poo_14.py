@@ -50,3 +50,33 @@ class Servico(IRecebivel):
             f"Valor por hora: R$ {self.valor_hora:.2f} | "
             f"Total: R$ {self.totalizarRecebivel():.2f}"
         )
+
+
+from irecebivel import IRecebivel
+
+
+class Registro:
+
+    def __init__(self):
+        self.registro = []
+
+    def adicionarItem(self, item: IRecebivel) -> None:
+        self.registro.append(item)
+
+    def listarItem(self) -> None:
+
+        if not self.registro:
+            print("Nenhum recebimento registrado.")
+            return
+
+        print("\n========== REGISTRO DE RECEBIMENTOS ==========")
+
+        total_geral = 0.0
+
+        for i, item in enumerate(self.registro, start=1):
+            print(f"\n{i}. {item}")
+            total_geral += item.totalizarRecebivel()
+
+        print("\n----------------------------------------------")
+        print(f"TOTAL GERAL RECEBIDO: R$ {total_geral:.2f}")
+        print("==============================================")
