@@ -65,3 +65,32 @@ class Cliente:
             raise ValueError("A renda não pode ser negativa.")
 
         self.__renda = float(renda)
+
+
+class Pessoa:
+    def __init__(self, nome, cpf):
+        self.__nome = nome
+        self.__cpf = cpf
+
+    def getNome(self):
+        return self.__nome
+
+    def setNome(self, nome):
+        self.__nome = nome
+
+    def getCPF(self):
+        return self.__cpf
+
+    def setCPF(self, cpf):
+        self.__cpf = cpf
+
+
+# Criando uma pessoa
+p1 = Pessoa("Jose", "123.456.789-00")
+
+print(f"Meu nome é {p1.getNome()}")
+print(f"Meu CPF é {p1.getCPF()}")
+
+p1.setCPF("111.222.333-44")
+
+print(f"Meu novo CPF é {p1.getCPF()}")
