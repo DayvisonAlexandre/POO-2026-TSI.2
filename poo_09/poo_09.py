@@ -94,3 +94,126 @@ print(f"Meu CPF é {p1.getCPF()}")
 p1.setCPF("111.222.333-44")
 
 print(f"Meu novo CPF é {p1.getCPF()}")
+
+
+from cliente import Cliente
+
+
+print("===================================")
+print("      TESTE DA CLASSE CLIENTE")
+print("===================================")
+
+
+# ===================================
+# TESTE 1 - Cliente válido
+# ===================================
+
+print("\n--- Teste 1: Cliente válido ---")
+
+cliente1 = Cliente(
+    "João Silva",
+    "123.456.789-00",
+    3500.00
+)
+
+print(f"Nome: {cliente1.nome}")
+print(f"CPF: {cliente1.cpf}")
+print(f"Renda: R$ {cliente1.renda:.2f}")
+
+
+# ===================================
+# TESTE 2 - Alterando o nome
+# ===================================
+
+print("\n--- Teste 2: Alterando o nome ---")
+
+cliente1.nome = "Maria Silva"
+
+print(f"Novo nome: {cliente1.nome}")
+
+
+# ===================================
+# TESTE 3 - Alterando o CPF
+# ===================================
+
+print("\n--- Teste 3: Alterando o CPF ---")
+
+cliente1.cpf = "111.222.333-44"
+
+print(f"Novo CPF: {cliente1.cpf}")
+
+
+# ===================================
+# TESTE 4 - Alterando a renda
+# ===================================
+
+print("\n--- Teste 4: Alterando a renda ---")
+
+cliente1.renda = 5000
+
+print(f"Nova renda: R$ {cliente1.renda:.2f}")
+
+
+# ===================================
+# TESTE 5 - Nome inválido
+# ===================================
+
+print("\n--- Teste 5: Nome inválido ---")
+
+try:
+    cliente1.nome = ""
+except ValueError as erro:
+    print(f"Erro: {erro}")
+
+
+# ===================================
+# TESTE 6 - CPF inválido
+# ===================================
+
+print("\n--- Teste 6: CPF inválido ---")
+
+try:
+    cliente1.cpf = ""
+except ValueError as erro:
+    print(f"Erro: {erro}")
+
+
+# ===================================
+# TESTE 7 - Renda negativa
+# ===================================
+
+print("\n--- Teste 7: Renda negativa ---")
+
+try:
+    cliente1.renda = -1000
+except ValueError as erro:
+    print(f"Erro: {erro}")
+
+
+# ===================================
+# TESTE 8 - Renda com texto
+# ===================================
+
+print("\n--- Teste 8: Renda com texto ---")
+
+try:
+    cliente1.renda = "3000"
+except TypeError as erro:
+    print(f"Erro: {erro}")
+
+
+# ===================================
+# TESTE 9 - Nome com tipo errado
+# ===================================
+
+print("\n--- Teste 9: Nome com tipo errado ---")
+
+try:
+    cliente1.nome = 123
+except TypeError as erro:
+    print(f"Erro: {erro}")
+
+
+print("\n===================================")
+print("          TESTES FINALIZADOS")
+print("===================================")
