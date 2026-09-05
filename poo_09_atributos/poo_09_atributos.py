@@ -124,3 +124,12 @@ print("\n(2) MÉTODO Produto.de_csv()")
 produto3 = Produto.de_csv(
     "Teclado;120.0;10"
 )
+
+# - Questão 03 -
+
+
+print("\n(3) MÉTODO Produto.validar_preco()")
+
+Produto.validar_preco(100.0)
+Produto.validar_preco(0.0)
+Produto.validar_preco(-20.0)
