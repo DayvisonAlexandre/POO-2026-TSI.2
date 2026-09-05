@@ -153,3 +153,95 @@ print(
     f"Retângulo 2 está totalmente dentro/no limite? "
     f"{rect_in_circle(circulo, retangulo_fora)}"
 )
+
+
+# - Questão 05 -
+
+
+def ponto_mais_proximo_retangulo(rectangle, point):
+    """
+    Encontra o ponto do retângulo que está mais próximo
+    de um determinado ponto.
+    """
+
+    x_min = rectangle.x
+    x_max = rectangle.x + rectangle.width
+
+    y_min = rectangle.y
+    y_max = rectangle.y + rectangle.height
+
+    x_proximo = max(x_min, min(point.x, x_max))
+    y_proximo = max(y_min, min(point.y, y_max))
+
+    return Point(x_proximo, y_proximo)
+
+
+def rect_circle_overlap(circle, rectangle):
+    """
+    Versão mais desafiadora da questão 5.
+
+    Retorna True se alguma parte do retângulo estiver
+    dentro ou no limite do círculo.
+
+    A função verifica o ponto do retângulo mais próximo
+    do centro do círculo.
+    """
+
+    ponto_proximo = ponto_mais_proximo_retangulo(
+        rectangle,
+        circle.center
+    )
+
+    return point_in_circle(circle, ponto_proximo)
+
+
+print("\n" + "=" * 60)
+print("QUESTÃO 5 - RECT_CIRCLE_OVERLAP")
+print("=" * 60)
+
+retangulo_sem_sobreposicao = Rectangle(250, 150, 50, 50)
+
+retangulo_sobreposto = Rectangle(210, 90, 50, 30)
+
+retangulo_com_canto_dentro = Rectangle(210, 140, 30, 30)
+
+print("Retângulo 3:")
+for i, corner in enumerate(
+    retangulo_sem_sobreposicao.corners(),
+    start=1
+):
+    print(f"  Canto {i}: ({corner.x}, {corner.y})")
+
+print(
+    f"Existe alguma parte do Retângulo 3 dentro/no limite "
+    f"do círculo? "
+    f"{rect_circle_overlap(circulo, retangulo_sem_sobreposicao)}"
+)
+
+
+print("\nRetângulo 4:")
+for i, corner in enumerate(
+    retangulo_sobreposto.corners(),
+    start=1
+):
+    print(f"  Canto {i}: ({corner.x}, {corner.y})")
+
+print(
+    f"Existe alguma parte do Retângulo 4 dentro/no limite "
+    f"do círculo? "
+    f"{rect_circle_overlap(circulo, retangulo_sobreposto)}"
+)
+
+
+print("\nRetângulo 5:")
+for i, corner in enumerate(
+    retangulo_com_canto_dentro.corners(),
+    start=1
+):
+    print(f"  Canto {i}: ({corner.x}, {corner.y})")
+
+print(
+    f"Existe alguma parte do Retângulo 5 dentro/no limite "
+    f"do círculo? "
+    f"{rect_circle_overlap(circulo, retangulo_com_canto_dentro)}"
+)
