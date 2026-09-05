@@ -53,3 +53,18 @@ circulo_teste = Circle(centro_teste, 10)
 print("Classe Circle criada com sucesso!")
 print(f"Centro: ({circulo_teste.center.x}, {circulo_teste.center.y})")
 print(f"Raio: {circulo_teste.radius}")
+
+
+# - Questão 02 -
+
+
+print("\n" + "=" * 60)
+print("QUESTÃO 2 - INSTÂNCIA DO CÍRCULO")
+print("=" * 60)
+
+centro = Point(150, 100)
+circulo = Circle(centro, 75)
+
+print("Objeto Circle criado com sucesso!")
+print(f"Centro: ({circulo.center.x}, {circulo.center.y})")
+print(f"Raio: {circulo.radius}")
