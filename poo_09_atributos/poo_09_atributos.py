@@ -116,6 +116,7 @@ print(
     f"{Produto.total_cadastrados}"
 )
 
+
 # - Questão 02 -
 
 
@@ -125,6 +126,7 @@ produto3 = Produto.de_csv(
     "Teclado;120.0;10"
 )
 
+
 # - Questão 03 -
 
 
@@ -133,3 +135,29 @@ print("\n(3) MÉTODO Produto.validar_preco()")
 Produto.validar_preco(100.0)
 Produto.validar_preco(0.0)
 Produto.validar_preco(-20.0)
+
+
+# - Questão 04 -
+
+
+print("\n(4) DESAFIO - CLASSE TEMPERATURA")
+
+temperatura1 = Temperatura.de_celsius(25)
+
+print(f"Valor armazenado: {temperatura1}")
+
+temperatura2 = Temperatura.de_fahrenheit(77)
+
+print(f"Valor armazenado: {temperatura2}")
+
+
+# ============================================================
+# RESULTADO FINAL
+# ============================================================
+
+print("\n" + "=" * 60)
+print(
+    f"Total final de produtos cadastrados: "
+    f"{Produto.total_cadastrados}"
+)
+print("=" * 60)
