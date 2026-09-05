@@ -16,3 +16,52 @@ class Pessoa:
 
     def isAdulto(self) -> bool:
         return True if self._idade >= 18 else False
+
+
+class Cliente:
+    def __init__(self, nome, cpf, renda):
+        self.nome = nome
+        self.cpf = cpf
+        self.renda = renda
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, nome):
+        if not isinstance(nome, str):
+            raise TypeError("O nome deve ser uma string.")
+
+        if nome.strip() == "":
+            raise ValueError("O nome não pode ser vazio.")
+
+        self.__nome = nome
+
+    @property
+    def cpf(self):
+        return self.__cpf
+
+    @cpf.setter
+    def cpf(self, cpf):
+        if not isinstance(cpf, str):
+            raise TypeError("O CPF deve ser uma string.")
+
+        if cpf.strip() == "":
+            raise ValueError("O CPF não pode ser vazio.")
+
+        self.__cpf = cpf
+
+    @property
+    def renda(self):
+        return self.__renda
+
+    @renda.setter
+    def renda(self, renda):
+        if not isinstance(renda, (int, float)):
+            raise TypeError("A renda deve ser um número.")
+
+        if renda < 0:
+            raise ValueError("A renda não pode ser negativa.")
+
+        self.__renda = float(renda)
