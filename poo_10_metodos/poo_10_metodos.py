@@ -200,3 +200,30 @@ print("\nLista ordenada pela idade:")
 
 for pessoa in pessoas_ordenadas:
     print(pessoa)
+
+
+# ============================================================
+# Testes Extras dos Operadores
+# ============================================================
+
+print("\n" + "=" * 60)
+print("TESTES DOS OPERADORES")
+print("=" * 60)
+
+print("\nTeste do __str__:")
+print(tarefa1)
+
+print("\nTeste do __repr__:")
+print(repr(tarefa1))
+
+print("\nTeste do __eq__:")
+print(f"Conta 1 == Conta 3? {conta1 == conta3}")
+
+print("\nTeste do __lt__:")
+pessoa_a = Pessoa("Lucas", 20)
+pessoa_b = Pessoa("Gabriel", 25)
+
+print(f"{pessoa_a} < {pessoa_b}? {pessoa_a < pessoa_b}")
+
+print("\nOrdenação com sorted():")
+print(sorted(pessoas))
