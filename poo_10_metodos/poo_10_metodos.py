@@ -227,3 +227,49 @@ print(f"{pessoa_a} < {pessoa_b}? {pessoa_a < pessoa_b}")
 
 print("\nOrdenação com sorted():")
 print(sorted(pessoas))
+
+# ============================================================
+# Discussão
+# ============================================================
+
+print("\n" + "=" * 60)
+print("DISCUSSÃO")
+print("=" * 60)
+
+print("""
+Por que comparar contas pelo número e não pelo saldo?
+
+O número da conta é o identificador da conta bancária.
+Ele serve para identificar uma conta específica dentro do
+sistema.
+
+O saldo, por outro lado, é apenas uma característica da
+conta e pode mudar várias vezes durante sua utilização.
+
+Por exemplo, duas contas podem ter o mesmo saldo de
+R$ 1.500,00 e ainda assim serem contas diferentes.
+
+Da mesma forma, duas referências podem representar a mesma
+conta mesmo que o saldo tenha mudado.
+
+Por isso, o método __eq__ foi implementado comparando o
+atributo numero e não o atributo saldo.
+
+Isso mostra que a igualdade de objetos pode ser definida
+de acordo com uma identidade lógica do domínio.
+
+No caso da ContaBancaria, o número funciona como essa
+identidade lógica.
+
+Assim:
+
+    conta1 == conta3
+
+retorna True quando os números são iguais, mesmo que
+titulares e saldos sejam diferentes.
+""")
+
+
+print("=" * 60)
+print("FIM DO PROGRAMA")
+print("=" * 60)
