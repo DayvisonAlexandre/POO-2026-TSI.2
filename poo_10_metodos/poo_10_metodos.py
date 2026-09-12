@@ -25,3 +25,32 @@ class Tarefa:
             f"Tarefa(descricao={self.descricao!r}, "
             f"concluida={self.concluida!r})"
         )
+
+
+# ============================================================
+# Exercício 02
+# __eq__ na classe ContaBancaria
+# ============================================================
+
+class ContaBancaria:
+    def __init__(self, numero, titular, saldo=0.0):
+        self.numero = numero
+        self.titular = titular
+        self.saldo = saldo
+
+    def __eq__(self, outra):
+        """
+        Duas contas são consideradas iguais quando
+        possuem o mesmo número de conta.
+        """
+        if not isinstance(outra, ContaBancaria):
+            return NotImplemented
+
+        return self.numero == outra.numero
+
+    def __str__(self):
+        return (
+            f"Conta {self.numero} | "
+            f"Titular: {self.titular} | "
+            f"Saldo: R$ {self.saldo:.2f}"
+        )
