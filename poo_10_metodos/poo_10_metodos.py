@@ -54,3 +54,31 @@ class ContaBancaria:
             f"Titular: {self.titular} | "
             f"Saldo: R$ {self.saldo:.2f}"
         )
+
+
+# ============================================================
+# Exercício 03
+# __lt__ na classe Pessoa
+# Ordenação pela idade
+# ============================================================
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def __lt__(self, outra):
+        """
+        Define que uma pessoa é "menor" que outra
+        quando possui idade menor.
+        """
+        if not isinstance(outra, Pessoa):
+            return NotImplemented
+
+        return self.idade < outra.idade
+
+    def __str__(self):
+        return f"{self.nome} - {self.idade} anos"
+
+    def __repr__(self):
+        return f"Pessoa(nome={self.nome!r}, idade={self.idade!r})"
