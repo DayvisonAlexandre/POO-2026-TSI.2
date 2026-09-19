@@ -27,3 +27,31 @@ print(conta.sacar(50.0))
 print(conta.saldo())
 print(conta.sacar(100.0))
 print(conta.saldo())
+
+
+# - Exercício 02 — Cronometro -
+
+class Cronometro:
+    def __init__(self) -> None:
+        self._segundos = 0
+
+    def iniciar(self) -> None:
+        self._segundos = 0
+
+    def tique(self) -> None:
+        self._segundos += 1
+
+    def tempo_formatado(self) -> str:
+        minutos = self._segundos // 60
+        segundos = self._segundos % 60
+
+        return f"{minutos:02d}:{segundos:02d}"
+
+
+cronometro = Cronometro()
+cronometro.iniciar()
+cronometro.tique()
+cronometro.tique()
+cronometro.tique()
+
+print(cronometro.tempo_formatado())
