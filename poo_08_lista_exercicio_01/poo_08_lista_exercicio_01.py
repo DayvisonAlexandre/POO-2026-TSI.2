@@ -29,3 +29,29 @@ class Aluno:
             f"{self.nome} ({self.matricula}) "
             f"— média {self.media():.1f}"
         )
+
+
+# ============================================================
+# - QUESTÃO 7 - Criar 3 alunos e imprimir apenas os aprovados -
+# ============================================================
+
+aluno1 = Aluno("Ana", "20261234")
+aluno1.lancar_nota(7.0)
+aluno1.lancar_nota(8.0)
+
+aluno2 = Aluno("Bruno", "20261235")
+aluno2.lancar_nota(5.0)
+aluno2.lancar_nota(5.5)
+
+aluno3 = Aluno("Carlos", "20261236")
+aluno3.lancar_nota(6.0)
+aluno3.lancar_nota(7.0)
+
+alunos = [aluno1, aluno2, aluno3]
+
+print("=== QUESTÃO 7 ===")
+print("Alunos aprovados:")
+
+for aluno in alunos:
+    if aluno.aprovado():
+        print(aluno)
