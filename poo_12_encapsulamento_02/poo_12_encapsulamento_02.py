@@ -27,3 +27,30 @@ print(conta.sacar(50.0))
 print(conta.saldo())
 print(conta.sacar(100.0))
 print(conta.saldo())
+
+
+# - Exercício 04 — Aluno -
+
+class Aluno:
+    def __init__(self, nota: float) -> None:
+        self.nota = nota
+
+    @property
+    def nota(self) -> float:
+        return self._nota
+
+    @nota.setter
+    def nota(self, valor: float) -> None:
+        if valor < 0 or valor > 10:
+            raise ValueError("nota inválida")
+
+        self._nota = valor
+
+
+aluno = Aluno(8.5)
+
+print(aluno.nota)
+
+aluno.nota = 10.0
+
+print(aluno.nota)
