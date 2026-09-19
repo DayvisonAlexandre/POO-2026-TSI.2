@@ -55,3 +55,40 @@ print("Alunos aprovados:")
 for aluno in alunos:
     if aluno.aprovado():
         print(aluno)
+
+
+# ============================================================
+# - QUESTÃO 8 - Classe Retangulo -
+# ============================================================
+
+class Retangulo:
+    def __init__(self, base: float, altura: float) -> None:
+        self.base = base
+        self.altura = altura
+
+    def area(self) -> float:
+        return self.base * self.altura
+
+    def perimetro(self) -> float:
+        return 2 * (self.base + self.altura)
+
+    def __eq__(self, outro: object) -> bool:
+        if not isinstance(outro, Retangulo):
+            return NotImplemented
+
+        return (
+            self.base == outro.base
+            and self.altura == outro.altura
+        )
+
+
+print("\n=== QUESTÃO 8 ===")
+
+retangulo1 = Retangulo(5.0, 3.0)
+retangulo2 = Retangulo(5.0, 3.0)
+retangulo3 = Retangulo(4.0, 3.0)
+
+print(f"Área do retângulo 1: {retangulo1.area():.2f}")
+print(f"Perímetro do retângulo 1: {retangulo1.perimetro():.2f}")
+print(f"Retângulo 1 == Retângulo 2? {retangulo1 == retangulo2}")
+print(f"Retângulo 1 == Retângulo 3? {retangulo1 == retangulo3}")
