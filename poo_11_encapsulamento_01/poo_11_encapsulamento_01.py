@@ -55,3 +55,15 @@ cronometro.tique()
 cronometro.tique()
 
 print(cronometro.tempo_formatado())
+
+
+# - Exercício 03 — Name Mangling -
+
+class ContaBancariaPrivada:
+    def __init__(self) -> None:
+        self.__saldo = 0.0
+
+
+conta_privada = ContaBancariaPrivada()
+
+print(conta_privada.__saldo)
