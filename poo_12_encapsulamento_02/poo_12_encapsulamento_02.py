@@ -54,3 +54,48 @@ print(aluno.nota)
 aluno.nota = 10.0
 
 print(aluno.nota)
+
+
+# - Exercício 05 — Retangulo -
+
+class Retangulo:
+    def __init__(self, base: float, altura: float) -> None:
+        self.base = base
+        self.altura = altura
+
+    @property
+    def base(self) -> float:
+        return self._base
+
+    @base.setter
+    def base(self, valor: float) -> None:
+        if valor <= 0:
+            raise ValueError("base inválida")
+
+        self._base = valor
+
+    @property
+    def altura(self) -> float:
+        return self._altura
+
+    @altura.setter
+    def altura(self, valor: float) -> None:
+        if valor <= 0:
+            raise ValueError("altura inválida")
+
+        self._altura = valor
+
+    @property
+    def area(self) -> float:
+        return self._base * self._altura
+
+
+retangulo = Retangulo(5.0, 3.0)
+
+print(retangulo.base)
+print(retangulo.altura)
+print(retangulo.area)
+
+retangulo.base = 10.0
+
+print(retangulo.area)
