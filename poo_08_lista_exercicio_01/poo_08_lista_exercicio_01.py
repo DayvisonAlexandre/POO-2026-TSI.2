@@ -92,3 +92,40 @@ print(f"Área do retângulo 1: {retangulo1.area():.2f}")
 print(f"Perímetro do retângulo 1: {retangulo1.perimetro():.2f}")
 print(f"Retângulo 1 == Retângulo 2? {retangulo1 == retangulo2}")
 print(f"Retângulo 1 == Retângulo 3? {retangulo1 == retangulo3}")
+
+
+# ============================================================
+# - QUESTÃO 9 - Classe Data -
+# ============================================================
+
+class Data:
+    def __init__(self, dia: int, mes: int, ano: int) -> None:
+        self.dia = dia
+        self.mes = mes
+        self.ano = ano
+
+    @classmethod
+    def de_texto(cls, texto: str) -> "Data":
+        dia, mes, ano = map(int, texto.split("/"))
+        return cls(dia, mes, ano)
+
+    @staticmethod
+    def bissexto(ano: int) -> bool:
+        return ano % 400 == 0 or (
+            ano % 4 == 0 and ano % 100 != 0
+        )
+
+    def __str__(self) -> str:
+        return f"{self.dia:02d}/{self.mes:02d}/{self.ano:04d}"
+
+
+print("\n=== QUESTÃO 9 ===")
+
+data1 = Data(9, 8, 2026)
+data2 = Data.de_texto("09/08/2026")
+
+print(f"Data 1: {data1}")
+print(f"Data 2: {data2}")
+
+print(f"2024 é bissexto? {Data.bissexto(2024)}")
+print(f"2025 é bissexto? {Data.bissexto(2025)}")
