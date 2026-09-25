@@ -120,3 +120,119 @@ class Estacionamento:
             f"Veículo saiu. "
             f"Vagas ocupadas: {self.ocupadas}/{self.vagas}"
         )
+
+
+# ============================================================
+# - Programa Principal -
+# ============================================================
+
+def main():
+
+    print("=" * 60)
+    print("1 - TESTE DA CONTA BANCÁRIA")
+    print("=" * 60)
+
+    conta = ContaBancaria("Maria")
+
+    print(f"Titular: {conta.titular}")
+    print(f"Saldo inicial: R$ {conta.saldo:.2f}")
+
+    # Depósito válido
+    try:
+        conta.depositar(1000)
+        print(f"Depósito realizado.")
+        print(f"Saldo atual: R$ {conta.saldo:.2f}")
+
+    except ValorInvalidoError as erro:
+        print(f"Erro: {erro}")
+
+    # Saque válido
+    try:
+        conta.sacar(300)
+        print(f"Saque realizado.")
+        print(f"Saldo atual: R$ {conta.saldo:.2f}")
+
+    except SaldoInsuficienteError as erro:
+        print(f"Operação negada: {erro}")
+
+    except ValorInvalidoError as erro:
+        print(f"Valor inválido: {erro}")
+
+    # Saque maior que o saldo
+    try:
+        conta.sacar(1000)
+
+    except SaldoInsuficienteError as erro:
+        print(f"Operação negada: {erro}")
+
+    except ValorInvalidoError as erro:
+        print(f"Valor inválido: {erro}")
+
+    # Depósito inválido
+    try:
+        conta.depositar(-50)
+
+    except ValorInvalidoError as erro:
+        print(f"Operação negada: {erro}")
+
+    # Desafio: captura pela classe base
+    print("\nTeste da exceção-base ErroDeConta:")
+
+    try:
+        conta.sacar(5000)
+
+    except ErroDeConta as erro:
+        print(f"Erro de conta capturado: {erro}")
+
+
+    print("\n" + "=" * 60)
+    print("2 - TESTE DA CLASSE ALUNO")
+    print("=" * 60)
+
+    try:
+        aluno = Aluno("João", 8.5)
+
+        print(f"Aluno: {aluno.nome}")
+        print(f"Nota: {aluno.nota}")
+
+        # Tentativa de nota inválida
+        aluno.nota = 12
+
+    except ValueError as erro:
+        print(f"Erro ao cadastrar nota: {erro}")
+
+
+    print("\n" + "=" * 60)
+    print("3 - TESTE DO ESTACIONAMENTO")
+    print("=" * 60)
+
+    estacionamento = Estacionamento(2)
+
+    try:
+        estacionamento.entrar()
+        estacionamento.entrar()
+        estacionamento.entrar()
+
+    except EstacionamentoLotadoError as erro:
+        print(f"Entrada negada: {erro}")
+
+    print("\nUm veículo irá sair:")
+
+    estacionamento.sair()
+
+    print("\nTentando entrar novamente:")
+
+    try:
+        estacionamento.entrar()
+
+    except EstacionamentoLotadoError as erro:
+        print(f"Entrada negada: {erro}")
+
+
+    print("\n" + "=" * 60)
+    print("FIM DOS TESTES")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
