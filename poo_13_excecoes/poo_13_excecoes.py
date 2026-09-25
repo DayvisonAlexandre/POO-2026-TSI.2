@@ -76,3 +76,47 @@ class Aluno:
             )
 
         self._nota = valor
+
+
+# ============================================================
+# - 03. Estacionamento -
+# ============================================================
+
+class EstacionamentoLotadoError(Exception):
+    """Exceção lançada quando o estacionamento está cheio."""
+    pass
+
+
+class Estacionamento:
+    def __init__(self, vagas: int):
+        if vagas <= 0:
+            raise ValueError(
+                "A quantidade de vagas deve ser maior que zero."
+            )
+
+        self.vagas = vagas
+        self.ocupadas = 0
+
+    def entrar(self):
+        if self.ocupadas >= self.vagas:
+            raise EstacionamentoLotadoError(
+                "Estacionamento lotado! Não há vagas disponíveis."
+            )
+
+        self.ocupadas += 1
+        print(
+            f"Veículo entrou. "
+            f"Vagas ocupadas: {self.ocupadas}/{self.vagas}"
+        )
+
+    def sair(self):
+        if self.ocupadas == 0:
+            raise ValueError(
+                "Não há veículos no estacionamento."
+            )
+
+        self.ocupadas -= 1
+        print(
+            f"Veículo saiu. "
+            f"Vagas ocupadas: {self.ocupadas}/{self.vagas}"
+        )
