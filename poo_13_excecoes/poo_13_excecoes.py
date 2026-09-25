@@ -53,3 +53,26 @@ class ContaBancaria:
             )
 
         self._saldo -= valor
+
+
+# ============================================================
+# - 02. Classe Aluno -
+# ============================================================
+
+class Aluno:
+    def __init__(self, nome: str, nota: float):
+        self.nome = nome
+        self.nota = nota
+
+    @property
+    def nota(self):
+        return self._nota
+
+    @nota.setter
+    def nota(self, valor):
+        if valor < 0 or valor > 10:
+            raise ValueError(
+                "A nota deve estar entre 0 e 10."
+            )
+
+        self._nota = valor
